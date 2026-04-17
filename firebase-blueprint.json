@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A lead submission from the test-drive form.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User's full name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "User's phone number"
+        },
+        "telegram": {
+          "type": "string",
+          "description": "User's Telegram handle"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the lead was created"
+        }
+      },
+      "required": ["name", "phone", "telegram", "createdAt"]
+    }
+  },
+  "firestore": {
+    "leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of lead submissions"
+    }
+  }
+}
